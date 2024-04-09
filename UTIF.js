@@ -53,9 +53,8 @@ UTIF.encodeImage = function(rgba, w, h, metadata)
 	return data.buffer;
 }
 
-UTIF.encode = function(ifds)
+UTIF.encode = function(ifds, LE)
 {
-	var LE = false;
 	var data = new Uint8Array(20000), offset = 4, bin = LE ? UTIF._binLE : UTIF._binBE;
 	data[0]=data[1]=LE?73:77;  bin.writeUshort(data,2,42);
 
